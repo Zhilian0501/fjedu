@@ -1,0 +1,75 @@
+/* === 全域設定 === */
+body {
+    font-family: "Segoe UI", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #fff0f5, #f5e6ff);
+    color: #333;
+  }
+  
+  h2 {
+    color: #5e2a84;
+    border-left: 6px solid #d291bc;
+    padding-left: 10px;
+    margin-bottom: 0.5em;
+  }
+  
+  section {
+    background: white;
+    margin: 2em auto;
+    padding: 2em;
+    border-radius: 12px;
+    max-width: 900px;
+    box-shadow: 0 0 10px rgba(180, 128, 255, 0.2);
+  }
+  
+  /* === FAQ === */
+  .faq dl dt {
+    font-weight: bold;
+    margin-top: 1em;
+    color: #8e44ad;
+  }
+  .faq dl dd {
+    margin-left: 1em;
+    color: #555;
+  }
+  
+  /* === Policy === */
+  .policy ul, .policy p {
+    margin-bottom: 1em;
+  }
+  .policy ul li {
+    margin-left: 1.5em;
+    list-style-type: disc;
+  }
+  
+  /* === Register 表單 === */
+  .register form {
+    display: flex;
+    flex-direction: column;
+  }
+  .register label {
+    margin-top: 1em;
+    color: #6a1b9a;
+  }
+  .register input, .register select, .register textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #d1b3e0;
+    border-radius: 6px;
+    font-size: 1em;
+  }
+  .register button {
+    margin-top: 2em;
+    padding: 12px;
+    background: linear-gradient(to right, #d291bc, #b27bd4);
+    color: white;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .register button:hover {
+    background: linear-gradient(to right, #b27bd4, #d291bc);
+  }

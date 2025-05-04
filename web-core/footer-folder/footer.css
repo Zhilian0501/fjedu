@@ -1,0 +1,15 @@
+/* 頁尾 FOOTER */
+footer {
+    background: #4a185a;
+    color: white;
+    text-align: center;
+    padding: 1.5em;
+  }
+  footer a {
+    color: #ffc1e3;
+    text-decoration: none;
+    margin: 0 0.5em;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }

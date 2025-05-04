@@ -1,0 +1,99 @@
+/* === 導覽列 NAV 樣式 === */
+.navbar {
+    background: linear-gradient(to right, #a56cc1, #d291bc);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 0.5em;
+    position: relative;
+    z-index: 10;
+  }
+  .navbar .logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+  .navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20em;
+  }
+  .navbar .nav-links li {
+    position: relative;
+  }
+  .navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+  }
+  .navbar .nav-links li a:hover {
+    color: #ffe0f0;
+  }
+  
+  /* === Dropdown 子選單樣式（課程介紹）=== */
+  .navbar .nav-links .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 2.5em;
+    left: 0;
+    background: linear-gradient(to bottom, #f5e6ff, #ffe0f5);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    min-width: 160px;
+    z-index: 999;
+  }
+  .navbar .nav-links li:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .navbar .dropdown-menu li {
+    padding: 0;
+  }
+  .navbar .dropdown-menu li a {
+    display: block;
+    padding: 0.8em 1.2em;
+    color: #6a1b9a;
+    background: transparent;
+    transition: background 0.3s ease;
+  }
+  .navbar .dropdown-menu li a:hover {
+    background: #fbe3ff;
+    color: #4a185a;
+  }
+  
+  /* === 響應式（漢堡）保留 === */
+  .hamburger {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+  }
+  #menu-toggle {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #a56cc1;
+      padding: 5.1em;
+      border-radius: 15px;
+    }
+    #menu-toggle:checked + .hamburger + .nav-links {
+      display: flex;
+    }
+    .hamburger {
+      display: block;
+    }
+  }
+  
