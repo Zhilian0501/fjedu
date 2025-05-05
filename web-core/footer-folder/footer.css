@@ -10,13 +10,13 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .footer-col {
-  flex: 1 1 220px;
-  min-width: 200px;
+  flex: 1 1 210px;
+  min-width: 190px;
 }
 
 .footer-col h3 {
