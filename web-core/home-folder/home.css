@@ -1,75 +1,227 @@
-/* === 全域設定 === */
+/* 主色系定義 */
+:root {
+  --main-purple: #6b2adc;
+  --soft-pink: #c3c0c1;
+  --deep-purple: #975090;
+  --white: #ffffff;
+}
+
+/* 通用設定 */
 body {
-    font-family: "Segoe UI", sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #fff0f5, #f5e6ff);
-    color: #333;
-  }
-  
-  h2 {
-    color: #5e2a84;
-    border-left: 6px solid #d291bc;
-    padding-left: 10px;
-    margin-bottom: 0.5em;
-  }
-  
-  section {
-    background: white;
-    margin: 2em auto;
-    padding: 2em;
-    border-radius: 12px;
-    max-width: 900px;
-    box-shadow: 0 0 10px rgba(180, 128, 255, 0.2);
-  }
-  
-  /* === FAQ === */
-  .faq dl dt {
-    font-weight: bold;
-    margin-top: 1em;
-    color: #8e44ad;
-  }
-  .faq dl dd {
-    margin-left: 1em;
-    color: #555;
-  }
-  
-  /* === Policy === */
-  .policy ul, .policy p {
-    margin-bottom: 1em;
-  }
-  .policy ul li {
-    margin-left: 1.5em;
-    list-style-type: disc;
-  }
-  
-  /* === Register 表單 === */
-  .register form {
-    display: flex;
-    flex-direction: column;
-  }
-  .register label {
-    margin-top: 1em;
-    color: #6a1b9a;
-  }
-  .register input, .register select, .register textarea {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #d1b3e0;
-    border-radius: 6px;
-    font-size: 1em;
-  }
-  .register button {
-    margin-top: 2em;
-    padding: 12px;
-    background: linear-gradient(to right, #d291bc, #b27bd4);
-    color: white;
-    font-size: 1em;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  .register button:hover {
-    background: linear-gradient(to right, #b27bd4, #d291bc);
-  }
+  font-family: "Noto Sans TC", sans-serif;
+  background-color: var(--white);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* 導覽列 */
+.navbar {
+  background-color: var(--main-purple);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  flex-wrap: wrap;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+}
+.navbar .logo {
+  font-size: 5rem;
+}
+.hamburger {
+  display: none;
+  font-size: 3rem;
+  color: white;
+}
+#menu-toggle {
+  display: none;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-links li {
+  list-style: none;
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--soft-pink);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  top: 100%;
+  left: 0;
+  z-index: 99;
+  border-radius: 4px;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a {
+  display: block;
+  padding: 0.2rem 1rem;
+  color: var(--deep-purple);
+}
+
+/* 導覽列滑動控制 */
+.navbar {
+  transition: top 0.5s ease;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.navbar.hide {
+  top: -100px; /* 隱藏高度可依據實際 navbar 高度微調 */
+}
+
+/* 導覽列固定在頂部並可隱藏 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #7e57c2;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  transition: top 0.3s ease;
+}
+
+/* 隱藏時往上移出畫面 */
+.navbar.hide {
+  top: -100px;
+}
+
+/* Banner */
+.banner {
+  background-color: var(--soft-pink);
+  color: var(--deep-purple);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.banner h2 {
+  font-size: 2rem;
+}
+
+/* 課程推薦區塊 */
+.featured-courses {
+  padding: 3rem 2rem;
+  background-color: #faf6ff;
+  text-align: center;
+}
+.course-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.course-item {
+  background-color: var(--white);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-weight: bold;
+  color: var(--main-purple);
+}
+
+.featured-courses {
+  padding: 2em;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.course-item {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-item h3 {
+  margin-bottom: 1em;
+}
+
+.course-item .button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3c00ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.course-item .button:hover {
+  background-color: #d40fb6;
+}
+
+
+/* 名師介紹區 */
+.teachers {
+  padding: 3rem 2rem;
+  background-color: var(--white);
+  text-align: center;
+}
+.teachers h2 {
+  color: var(--main-purple);
+}
+
+/* 快速連結區 */
+.quick-links {
+  padding: 3rem 2rem;
+  background-color: var(--soft-pink);
+  text-align: center;
+}
+.quick-links ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.quick-links a.button {
+  background: linear-gradient(45deg, #ba68c8, #9575cd);
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.quick-links a.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* 成果展示 */
+.student-achievements {
+  background-color: #f3e5f5;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.student-achievements h2 {
+  color: var(--deep-purple);
+}
+
